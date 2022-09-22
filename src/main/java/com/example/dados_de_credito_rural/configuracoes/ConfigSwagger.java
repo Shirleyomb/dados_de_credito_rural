@@ -32,7 +32,7 @@ public class ConfigSwagger implements WebMvcConfigurer {
     public Docket productApi() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.application.creditorural"))
+                .apis(RequestHandlerSelectors.basePackage("com.example.dados_de_credito_rural"))
                 .paths(regex("/posts.*"))
                 .build()
                 .apiInfo(metaInfo());

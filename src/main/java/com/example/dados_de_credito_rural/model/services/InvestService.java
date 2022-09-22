@@ -80,14 +80,14 @@ public class InvestService {
     }
 
     public List<DtoFilter> listAll(String anoEmissao, Pageable pageable) {
-        return InvestMunicipioRepository.searchAno(anoEmissao, pageable)
+        return investMunicipioRepository.searchAno(anoEmissao, pageable)
                 .stream()
                 .map(this::toDtoFilter)
                 .collect(Collectors.toList());
     }
 
     public Page<InvestMunicipio> searchByAno(String anoEmissao, Pageable pageable) {
-        Page<InvestMunicipio> result = InvestMunicipioRepository.searchAno(anoEmissao, pageable);
+        Page<InvestMunicipio> result = investMunicipioRepository.searchAno(anoEmissao, pageable);
         return result;
     }
 
@@ -98,11 +98,6 @@ public class InvestService {
                     investMunicipioRepository.save(investMunicipio);
                     return Void.TYPE;
                 }).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Dado nao encontrado."));
-    }
-
-    public Page<InvestMunicipio> searchByMunicipio(String municipio, Pageable pageable) {
-        Page<InvestMunicipio> result = InvestMunicipioRepository.searchMunicipio(municipio, pageable);
-        return result;
     }
 
     public void saveAll(InvestMunicipio investMunicipio) {

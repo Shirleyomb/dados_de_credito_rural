@@ -5,6 +5,6 @@ public interface DtoFilterConverter {
     public String getAnoEmissao();
     public String getMunicipio();
     public String getNomeProduto();
-    public Double getInvestimentoSum();
+    public Double getAreaInvest();
 }
 

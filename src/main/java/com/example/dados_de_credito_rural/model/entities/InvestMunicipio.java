@@ -40,8 +40,6 @@ public class InvestMunicipio implements Serializable {
     private String cdModalidade;
     @JsonProperty("AreaInvest")
     private double areaInvest;
-
-
 }
 
 

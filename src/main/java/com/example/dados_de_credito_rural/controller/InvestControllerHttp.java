@@ -130,17 +130,5 @@ public class InvestControllerHttp {
         mv.addObject("list", list);
         return mv;
     }
-
-    @GetMapping(value = "/search-municipio")
-    @ResponseStatus(HttpStatus.OK)
-    @ApiOperation(value = "Retorna lista de produtos por municipio")
-    public ResponseEntity<Page<InvestMunicipio>> searchByMunicipio(
-            @RequestParam(defaultValue = "") String municipio,
-            Pageable pageable) {
-        Page<InvestMunicipio> list = investService.searchByMunicipio(municipio, pageable);
-        return ResponseEntity.ok(list);
-    }
-
-
 }
 
